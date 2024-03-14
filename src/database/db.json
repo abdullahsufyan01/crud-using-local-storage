@@ -1,0 +1,28 @@
+{
+  "user": [
+    {
+      "id": "e94f",
+      "firstName": "Abdullah Bin",
+      "lastName": "Sufyan",
+      "email": "malickabee01@gmail.com",
+      "phoneNum": "+923009654884",
+      "age": "25"
+    },
+    {
+      "id": "c685",
+      "firstName": "Hassan ",
+      "lastName": "Khawar",
+      "email": "hassan@techtonex.com",
+      "phoneNum": "+923241234567",
+      "age": "25"
+    },
+    {
+      "id": "604d",
+      "firstName": "Salman",
+      "lastName": "Humayoun",
+      "email": "salman@techtonex.com",
+      "phoneNum": "+3230098765432",
+      "age": "30"
+    }
+  ]
+}
