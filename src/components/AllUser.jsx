@@ -27,7 +27,7 @@ const columns = [
   { id: "actions", label: "Actions" },
 ];
 
-const AllUser = () => {
+const AllUser = ({darkMode}) => {
   const [page, setPage] = React.useState(0);
   const [rowsPerPage, setRowsPerPage] = React.useState(10);
   const [users, setUsers] = useState([]);
@@ -73,7 +73,7 @@ const AllUser = () => {
                       <TableCell
                         key={column.id}
                         align={column.align}
-                        style={{ minWidth: column.minWidth }}
+                        style={{ minWidth: column.minWidth, color:darkMode ? "#ffa726" : "purple" }}
                       >
                         {column.label}
                       </TableCell>
@@ -98,7 +98,7 @@ const AllUser = () => {
                           <TableCell>{user.age}</TableCell>
                           <TableCell>
                             <Stack direction="row" spacing={2}>
-                              <Button variant="contained" color="success" component={Link} to={`/edit-user/${user.id}`}>
+                              <Button variant="contained" color={darkMode?"warning":"success"} component={Link} to={`/edit-user/${user.id}`}>
                                 Edit
                               </Button>
                               <Button variant="contained" color="error" onClick={(id)=> handleDelete(user.id)}>

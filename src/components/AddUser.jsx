@@ -6,7 +6,6 @@ import { useNavigate } from 'react-router-dom';
 
 const FormWrapper = styled('section')({
   padding: '70px 0',
-  backgroundColor: '#d2d2d2',
 });
 
 const initialValues = {
@@ -17,7 +16,7 @@ const initialValues = {
     age:''
 }
 
-const AddUser = () => {
+const AddUser = ({darkMode}) => {
     const navigateTo = useNavigate()
     const [user,setUser] = useState(initialValues)
 
@@ -35,34 +34,34 @@ const AddUser = () => {
     <FormWrapper className='add-user'>
       <Container maxWidth="lg">
         <FormGroup>
-          <Grid container spacing={2}>
-            <Grid item xs={6}>
+          <Grid container spacing={2} columns={{ xs: 6, sm: 12, md: 12 }}>
+            <Grid item xs={12} sm={6} md={6}>
               <FormControl fullWidth>
                 <TextField label="First Name" type='text' variant="outlined" name='firstName' onChange={(e)=> onValueChange(e)}/>
               </FormControl>
             </Grid>
-            <Grid item xs={6}>
+            <Grid item xs={12} sm={6} md={6}>
               <FormControl fullWidth>
                 <TextField label="Last Name" type='text' variant="outlined" name='lastName' onChange={(e)=> onValueChange(e)}/>
               </FormControl>
             </Grid>
-            <Grid item xs={6}>
+            <Grid item xs={12} sm={6} md={6}>
               <FormControl fullWidth>
                 <TextField label="Email" type='email' variant="outlined" name='email' onChange={(e)=> onValueChange(e)}/>
               </FormControl>
             </Grid>
-            <Grid item xs={6}>
+            <Grid item xs={12} sm={6} md={6}>
               <FormControl fullWidth>
                 <TextField label="Phone Number" type='text' variant="outlined" name='phoneNum' onChange={(e)=> onValueChange(e)}/>
               </FormControl>
             </Grid>
-            <Grid item xs={6}>
+            <Grid item xs={12} sm={6} md={6}>
               <FormControl fullWidth>
                 <TextField label="Age" type='text' variant="outlined" name='age' onChange={(e)=> onValueChange(e)}/>
               </FormControl>
             </Grid>
           </Grid>
-          <Button variant="contained" type='submit' onClick={()=> addNewUser()} color="primary" sx={{ mt: 2 }}>
+          <Button variant="contained" type='submit' onClick={()=> addNewUser()} color={darkMode?"warning":"secondary"} sx={{ mt: 2 }}>
             Submit
           </Button>
         </FormGroup>

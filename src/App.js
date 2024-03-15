@@ -22,9 +22,9 @@ function App(props) {
       <div className="App">
         <Navbar darkMode={darkMode} setDarkMode={setDarkMode} />
         <Routes>
-          <Route path='/' element={<AllUser />} />
-          <Route path='/add-user' element={<AddUser />} />
-          <Route path={`/edit-user/:id`} element={<EditUser />} />
+          <Route path='/' element={<AllUser darkMode={darkMode}/>} />
+          <Route path='/add-user' element={<AddUser darkMode={darkMode}/>} />
+          <Route path={`/edit-user/:id`} element={<EditUser darkMode={darkMode}/>} />
         </Routes>
       </div>
     </ThemeProvider>

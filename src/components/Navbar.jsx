@@ -36,9 +36,11 @@ function Navbar({ window, darkMode, setDarkMode }) {
 
   const drawer = (
     <Box onClick={handleDrawerToggle} sx={{ textAlign: "center" }}>
-      <Typography variant="h6" sx={{ my: 2 }}>
-        MUI
+      <Link to="/">
+      <Typography variant="h6" sx={{ my: 2 , color:"#FFA726"}}>
+        CRUD
       </Typography>
+      </Link>
       <Divider />
       <List>
         {navItems.map((item, index) => (
@@ -56,12 +58,12 @@ function Navbar({ window, darkMode, setDarkMode }) {
     window !== undefined ? () => window().document.body : undefined;
 
   return (
-    <Box sx={{ display: "flex" }}>
+    <Box sx={{ display: "flex", }}>
       <CssBaseline />
       <AppBar component="nav" position="static" color="secondary">
-        <Toolbar>
+        <Toolbar sx={{justifyContent:"space-between"}}>
           <IconButton
-            color="inherit"
+            color={darkMode?"warning":"inherit"}
             aria-label="open drawer"
             edge="start"
             onClick={handleDrawerToggle}
@@ -82,13 +84,13 @@ function Navbar({ window, darkMode, setDarkMode }) {
                 key={index}
                 component={Link}
                 to={item.path}
-                sx={{ color: "#fff" }}
+                sx={{ color: darkMode? "purple":"#fff" }}
               >
                 {item.text}
               </Button>
             ))}
           </Box>
-          <Switch checked={darkMode} onChange={handleDarkModeToggle} />
+          <Switch checked={darkMode} onChange={handleDarkModeToggle} color="warning" />
         </Toolbar>
       </AppBar>
       <nav>
